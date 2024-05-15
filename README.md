@@ -1,6 +1,6 @@
 # Realtime Reaction
 
-POC project using Laravel Reverb and laravel-reactions.
+POC project using [Laravel Reverb](https://reverb.laravel.com/) and [laravel-reactions](https://github.com/qirolab/laravel-reactions).
 
 ```bash
 cp .env.example .env

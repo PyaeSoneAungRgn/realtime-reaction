@@ -7,7 +7,9 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.0",
-        "laravel/tinker": "^2.9"
+        "laravel/reverb": "@beta",
+        "laravel/tinker": "^2.9",
+        "qirolab/laravel-reactions": "^2.8"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

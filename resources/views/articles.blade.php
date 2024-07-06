@@ -18,8 +18,7 @@
     <script type="module">
         Echo.channel(`reactions`)
             .listen('ReactionUpdated', (e) => {
-                console.log(e);
-                console.log(document.getElementById(e.payload.id));
+                console.log(e.payload);
                 document.getElementById(e.payload.id).innerHTML = e.payload.reactions_count;
             });
     </script>

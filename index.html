@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="playground">
+    </div>
+
+    <script src="https://js.pusher.com/8.0.1/pusher.min.js"></script>
+
+    <script>
+        var pusher = new Pusher('vprapqzdnkgnnucd5obh', {
+            appId: '236240',
+            secret: 'lli1otnlanhedxijl0o2',
+            wsHost: '127.0.0.1',
+            wsPort: 8080,
+            forceTLS: false,
+            enabledTransports: ['ws'],
+            cluster: ''
+        });
+
+        var channel = pusher.subscribe('reactions');
+
+        channel.bind('App\\Events\\ReactionUpdated', (event) => {
+            console.log(event);
+            const node = document.createElement("li");
+            const textnode = document.createTextNode(`Article ${event.payload.id}: Reaction Count ${event.payload.reactions_count}`);
+            node.appendChild(textnode);
+            document.getElementById('playground').appendChild(node);
+        });
+    </script>
+</body>
+
+</html>

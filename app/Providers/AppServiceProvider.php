@@ -24,11 +24,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Event::listen(function (OnReaction $event) {
-            ReactionUpdated::dispatch($event->reactable, $event->reaction, $event->reactBy);
+            ReactionUpdated::dispatch($event->reactable, $event->reactBy, $event->reaction);
         });
 
         Event::listen(function (OnDeleteReaction $event) {
-            ReactionUpdated::dispatch($event->reactable, $event->reaction, $event->reactBy);
+            ReactionUpdated::dispatch($event->reactable, $event->reactBy);
         });
     }
 }

@@ -23,8 +23,8 @@ class ReactionUpdated implements ShouldBroadcast
      */
     public function __construct(
         private ReactableInterface $reactable,
-        private Reaction $reaction,
         private ReactsInterface $reactBy,
+        private ?Reaction $reaction = null,
     ) {
         if ($reactable instanceof Article) {
             $this->payload = [
